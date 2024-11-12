@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="SCModel" representedClassName="SCModel" syncable="YES" codeGenerationType="class">
+        <attribute name="s_ip" optional="YES" attributeType="String"/>
+        <attribute name="s_name" optional="YES" attributeType="String"/>
+        <attribute name="s_port" optional="YES" attributeType="String"/>
+        <attribute name="s_token" optional="YES" attributeType="String"/>
+        <attribute name="u_name" optional="YES" attributeType="String"/>
+        <attribute name="u_passwort" optional="YES" attributeType="String"/>
+    </entity>
+</model>
