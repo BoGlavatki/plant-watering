@@ -150,7 +150,7 @@ class ConnectionSettingsViewController: UIViewController, CocoaMQTTDelegate{
         print("testConnectionTapped")
         getCoreData()
         print("Test Verbindung gestartet")
-                
+              /*
                 // Trenne zuerst die Verbindung, falls bereits verbunden
                 if mqttClient?.connState == .connected {
                     mqttClient?.disconnect()
@@ -162,7 +162,22 @@ class ConnectionSettingsViewController: UIViewController, CocoaMQTTDelegate{
                     
                     // Stelle eine Verbindung zum MQTT-Server her
                     mqttClient?.connect()
+                }*/
+        if(ipAdresse.text! != "" && portNummer.text! != ""){
+            let ip = ipAdresse.text!
+            let port = UInt16(portNummer.text!)
+            let clientID = "iOSClient-\(UUID().uuidString)"
+            MQTTManager.shared.configureClient(clientID: clientID, host: ip, port: port!)
+            if( MQTTManager.shared.connect()){
+                DispatchQueue.main.async {
+                    self.checkImg.tintColor = UIColor.green
                 }
+            }
+            
+            
+        }else{
+            showAlert(title: "Fehler", message: "Portnummer und IP-Adresse dürfen nicht leer sein.")
+        }
     }
     
     @IBAction func testConnection(_ sender: Any) {
